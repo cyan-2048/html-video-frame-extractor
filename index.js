@@ -56,6 +56,7 @@ window.addEventListener('load', () => {
 
   video.addEventListener('seeked', () => {
     const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(video, 0, 0);
     canvas.title = frameInput.value;
     seek?.resolve();
